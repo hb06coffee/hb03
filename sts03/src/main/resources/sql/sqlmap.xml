@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap>
+	<select id="selectAll" resultClass="com.hb.sts03.model.dto.GuestVo">
+	SELECT * FROM GUEST
+	</select>
+	
+	<select id="selectOne" parameterClass="int" resultClass="com.hb.sts03.model.dto.GuestVo">
+	SELECT * FROM GUEST WHERE SABUN=#value#
+	</select>
+	
+	<insert id="insertOne" parameterClass="com.hb.sts03.model.dto.GuestVo">
+	INSERT INTO GUEST (SABUN, NAME, NALJA, PAY) VALUES ( #sabun#, #name#, SYSDATE, #pay# )
+	</insert>
+	
+	<update id="updateOne" parameterClass="com.hb.sts03.model.dto.GuestVo">
+	UPDATE GUEST SET NAME=#name#, PAY=#pay# WHERE SABUN=#sabun#
+	</update>
+	
+	<delete id="deleteOne" parameterClass="int">
+	DELETE FROM GUEST WHERE SABUN=#value#
+	</delete>
+</sqlMap>
+
+
+
+
+
+
+
+
+
+
